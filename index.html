@@ -834,7 +834,7 @@ lastVarada=result.data;
 try{varadaRef.check=JSON.parse(lastVarada.verificacionesJson||'{}');}catch(e){varadaRef.check={};}
 try{varadaRef.notes=JSON.parse(lastVarada.notasJson||'{}');}catch(e){varadaRef.notes={};}
 try{varadaRef.gaugesBabor=JSON.parse(lastVarada.medidoresBaborJson||'{}');}catch(e){varadaRef.gaugesBabor={};}
-try{varadaRef.gaugesEstribor=JSON.parse(lastVarada.medidoresEstribor Json||'{}');}catch(e){varadaRef.gaugesEstribor={};}
+try{varadaRef.gaugesEstribor=JSON.parse(lastVarada.medidoresEstribOrJson||'{}');}catch(e){varadaRef.gaugesEstribor={};}
 try{varadaRef.gaugesCentral=JSON.parse(lastVarada.medidoresCentralJson||'{}');}catch(e){varadaRef.gaugesCentral={};}
 var varadaDate=new Date(lastVarada.fecha);
 var sixMonthsAgo=new Date();sixMonthsAgo.setMonth(sixMonthsAgo.getMonth()-6);
@@ -886,7 +886,7 @@ var medB=JSON.parse(lastVarada.medidoresBaborJson||'{}');
 for(var k in medB){var el=document.getElementById(k);if(el)el.value=medB[k]||'';}
 }catch(e){}
 try{
-var medE=JSON.parse(lastVarada.medidoresEstribor Json||'{}');
+var medE=JSON.parse(lastVarada.medidoresEstribOrJson||'{}');
 for(var k in medE){var el=document.getElementById(k);if(el)el.value=medE[k]||'';}
 }catch(e){}
 try{
@@ -933,7 +933,7 @@ var medB=JSON.parse(lastVarada.medidoresBaborJson||'{}');
 for(var k in medB){var el=document.getElementById(k);if(el)el.value=medB[k]||'';}
 }catch(e){}
 try{
-var medE=JSON.parse(lastVarada.medidoresEstribor Json||'{}');
+var medE=JSON.parse(lastVarada.medidoresEstribOrJson||'{}');
 for(var k in medE){var el=document.getElementById(k);if(el)el.value=medE[k]||'';}
 }catch(e){}
 try{
@@ -1148,7 +1148,7 @@ try{var cp=JSON.parse(insp.checklistPrevioJson||'{}');for(var k in cp){var el=do
 try{var v=JSON.parse(insp.verificacionesJson||'{}');for(var k in v){var el=document.getElementById(k);if(el)el.checked=v[k];}}catch(e){}
 try{var n=JSON.parse(insp.notasJson||'{}');data.notas=n;for(var k in n){if(n[k])document.getElementById(k+'-item').classList.add('with-note');}}catch(e){}
 try{var mb=JSON.parse(insp.medidoresBaborJson||'{}');for(var k in mb){var el=document.getElementById(k);if(el)el.value=mb[k];}}catch(e){}
-try{var me=JSON.parse(insp.medidoresEstribor Json||'{}');for(var k in me){var el=document.getElementById(k);if(el)el.value=me[k];}}catch(e){}
+try{var me=JSON.parse(insp.medidoresEstribOrJson||'{}');for(var k in me){var el=document.getElementById(k);if(el)el.value=me[k];}}catch(e){}
 try{var mc=JSON.parse(insp.medidoresCentralJson||'{}');for(var k in mc){var el=document.getElementById(k);if(el)el.value=mc[k];}}catch(e){}
 updateCharCounter();
 showTab('nueva');
